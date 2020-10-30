@@ -8,6 +8,7 @@ const App: React.FC = () => {
         <header className="App-header">
           <div className="App-link">Algorithms Practice</div>
         </header>
+        <a href="https://arianna-dev.vercel.app/">Back to home</a>
       </div>
     </>
   );
