@@ -35,7 +35,7 @@
   text-align: center;
   flex-wrap: wrap;
   color: #61dafb;
-  padding: 50px;
+  padding: 20px;
   margin: 20px;
   border: solid;
 }
@@ -49,4 +49,10 @@
 a .normal-a {
   color: white;
   text-decoration: none;
+}
+.psudeocode {
+  font-size: 12px;
+}
+li {
+  text-align: left;
 }
