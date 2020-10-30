@@ -6,9 +6,7 @@ const App: React.FC = () => {
     <>
       <div className="App">
         <header className="App-header">
-          <a className="App-link" rel="noopener noreferrer">
-            Front Page
-          </a>
+          <div className="App-link">Algorithms Practice</div>
         </header>
       </div>
     </>
