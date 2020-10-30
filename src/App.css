@@ -23,16 +23,30 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
+.flex {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.Container {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  flex-wrap: wrap;
   color: #61dafb;
+  padding: 50px;
+  margin: 20px;
+  border: solid;
+}
+.Container p {
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Container .algo-single {
+  font-size: 15px;
+}
+a .normal-a {
+  color: white;
+  text-decoration: none;
 }
