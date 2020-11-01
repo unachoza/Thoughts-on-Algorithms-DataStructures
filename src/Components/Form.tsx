@@ -72,7 +72,7 @@ class Form extends Component<{}, State> {
               name="passconf"
             />
           </div>
-          <button type="submit" className="btn btn-primary mt-5 btn-lg btn-block">
+          <button type="submit" className="btn-submit ">
             Submit
           </button>
         </form>
