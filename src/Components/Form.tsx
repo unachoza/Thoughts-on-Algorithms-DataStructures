@@ -8,6 +8,8 @@ interface State {
   site: string;
   password: string;
   passconf: string;
+  rows: React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
+  cols: React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 }
 //<{}, State>
 class Form extends Component<{}, State> {
@@ -22,21 +24,18 @@ class Form extends Component<{}, State> {
   render() {
     return (
       <div className="container">
-        <h3 className="text-center mb-5">Register With Us</h3>
+        <div className="text-center mb-5">Add Question</div>
         <form action="/register" method="POST" className="form">
           <div className="form-group" id="name">
-            <label className="text-muted mb-0" htmlFor="#username">
-              Username
-            </label>
-            <input type="text" name="Username" id="username" className="form-control" placeholder="Enter Username" />
+            <textarea rows={10} name="Username" id="username" className="form-control" placeholder="question" />
           </div>
-          <div className="form-group" id="phone-inp">
+          {/* <div className="form-group" id="phone-inp">
             <label className="text-muted mb-0" htmlFor="#phone">
               Enter your phone number
             </label>
             <input type="text" id="phone" placeholder="XXX-XXX-XXXX" name="phone" className="form-control" />
-          </div>
-          <div className="form-group" id="mail">
+          </div> */}
+          {/* <div className="form-group" id="mail">
             <label className="text-muted mb-0" htmlFor="#email">
               Email
             </label>
@@ -71,9 +70,9 @@ class Form extends Component<{}, State> {
               id="passconf"
               name="passconf"
             />
-          </div>
+          </div> */}
           <button type="submit" className="btn-submit ">
-            Submit
+            Next
           </button>
         </form>
         <form action="submit"></form>
