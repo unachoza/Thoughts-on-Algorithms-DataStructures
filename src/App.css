@@ -119,8 +119,33 @@ textarea {
   font-size: 15px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  margin: 3px;
+}
 .btn-submit {
   height: 60px;
   width: 100px;
-  margin: 0px;
+}
+
+.btn {
+  padding: 20px;
+  width: 100px;
+  margin: 5px;
+  color: white;
+  border: solid;
+}
+.data-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+.data-btn-container {
+  border: solid blue;
+  display: flex;
+  justify-content: center;
 }

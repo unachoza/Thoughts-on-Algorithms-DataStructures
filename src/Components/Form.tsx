@@ -2,78 +2,156 @@ import React, { Component } from 'react';
 import '../App.css';
 
 interface State {
-  username: string;
-  phone: string;
-  email: string;
-  site: string;
-  password: string;
-  passconf: string;
-  rows: React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
-  cols: React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
+  question: boolean;
+  categories: boolean;
+  bigO: boolean;
+  psuedoCode: boolean;
+  name: false;
+
+  array: boolean;
+  hashTable: boolean;
+  linkedList: boolean;
+  tree: boolean;
+  graph: boolean;
+  stack: boolean;
+  queue: boolean;
 }
-//<{}, State>
+
 class Form extends Component<{}, State> {
   state: any = {
-    username: false,
-    phone: false,
-    email: false,
-    site: false,
-    password: false,
+    question: false,
+    categories: false,
+    bigO: false,
+    psuedoCode: false,
     passconf: false,
+    array: false,
+    hashTable: false,
+    linkedList: false,
+    tree: false,
+    graph: false,
+    stack: false,
+    queue: false,
   };
+  navigate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    let navArr = ['question', 'categories', 'bigO', 'psuedoCode'];
+    let name: string = e.currentTarget.value;
+    //@ts-ignore
+    this.setState({ [name]: true });
+    navArr = navArr.filter((nav) => nav !== name);
+    //@ts-ignore
+    navArr.forEach((nav) => this.setState({ [nav]: false }));
+  };
+  toggleFork = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    let datastructure = e.currentTarget.value;
+    //@ts-ignore
+    this.setState({ [datastructure]: !this.state.datastructure });
+  };
+
   render() {
+    const dataStructures: string[] = ['array', 'hashTable', 'linkedList', 'tree', 'graph', 'stack', 'queue'];
+    const AlgorithmTypes: string[] = ['sorting', 'searching', 'counting', 'bubble'];
     return (
       <div className="container">
-        <div className="text-center mb-5">Add Question</div>
         <form action="/register" method="POST" className="form">
-          <div className="form-group" id="name">
-            <textarea rows={10} name="Username" id="username" className="form-control" placeholder="question" />
+          {/* page1 */}
+          <div>
+            Add Question
+            <div className="form-group" id="name">
+              <textarea rows={10} name="Username" id="username" className="form-control" placeholder="question" />
+            </div>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Next
+            </button>
           </div>
-          {/* <div className="form-group" id="phone-inp">
-            <label className="text-muted mb-0" htmlFor="#phone">
-              Enter your phone number
-            </label>
-            <input type="text" id="phone" placeholder="XXX-XXX-XXXX" name="phone" className="form-control" />
-          </div> */}
-          {/* <div className="form-group" id="mail">
-            <label className="text-muted mb-0" htmlFor="#email">
-              Email
-            </label>
-            <input type="text" id="email" placeholder="Enter email" name="email" className="form-control" />
+          {/* page 2 */}
+          <div>
+            Select Data Structure
+            <div className="data-btn-container">
+              <div className="data-group" id="phone-inp">
+                {dataStructures.map((type, i) => (
+                  <div key={i} className="btn">
+                    <input
+                      type="checkbox"
+                      id={type}
+                      name={type}
+                      value={type}
+                      hidden
+                      onClick={(e) => this.state.toggleFork(e)}
+                    />
+                    <label htmlFor={type} id="checkbox-option">
+                      {type}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+            Identify Algorithm
+            <div className="data-btn-container">
+              <div className="data-group" id="phone-inp">
+                {AlgorithmTypes.map((type, i) => (
+                  <div key={i} className="btn">
+                    <input
+                      type="checkbox"
+                      id={type}
+                      name={type}
+                      value={type}
+                      hidden
+                      onClick={(e) => this.state.toggleFork(e)}
+                    />
+                    <label htmlFor={type} id="checkbox-option">
+                      {type}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Back
+            </button>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Next
+            </button>
           </div>
-          <div className="form-group" id="site-inp">
-            <label className="text-muted mb-0" htmlFor="#site">
-              Your website
-            </label>
-            <input type="text" id="site" placeholder="https://www.xyz.com" name="site" className="form-control" />
+          {/* page3 */}
+          <div>
+            Pseudocode
+            <div className="form-group" id="name">
+              <textarea rows={10} name="Username" id="username" className="form-control" placeholder="question" />
+            </div>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Back
+            </button>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Next
+            </button>
           </div>
-          <div className="form-group" id="pass">
-            <label className="text-muted mb-0" htmlFor="#password">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter Password"
-              id="password"
-              name="password"
-            />
+          {/* page4 */}
+          <div>
+            Code
+            <div className="form-group" id="name">
+              <textarea rows={10} name="Username" id="username" className="form-control" placeholder="question" />
+            </div>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Back
+            </button>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Next
+            </button>
           </div>
-          <div className="form-group" id="pass2">
-            <label className="text-muted mb-0" htmlFor="#passconf">
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter Password again"
-              id="passconf"
-              name="passconf"
-            />
-          </div> */}
-          <button type="submit" className="btn-submit ">
-            Next
-          </button>
+          {/* page5 */}
+          <div>
+            Big O
+            <div className="form-group" id="name">
+              <input name="Username" id="username" className="form-control" placeholder="Time" />
+              <input name="Username" id="username" className="form-control" placeholder="Space" />
+            </div>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Back
+            </button>
+            <button value="categories" type="submit" className="btn-submit " onClick={(e) => this.navigate(e)}>
+              Submit
+            </button>
+          </div>
         </form>
         <form action="submit"></form>
       </div>
