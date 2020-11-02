@@ -134,7 +134,7 @@ input {
 
 .btn {
   padding: 20px;
-  width: 100px;
+  width: 95px;
   margin: 5px;
   color: white;
   border: solid;
@@ -145,7 +145,8 @@ input {
   width: 90%;
 }
 .data-btn-container {
-  border: solid blue;
+  /* border: solid blue; */
   display: flex;
   justify-content: center;
+  margin: 5px;
 }
