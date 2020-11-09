@@ -28,6 +28,19 @@ const AlgoSingle: React.FC = () => {
           </ul>
         </p>
       </div>
+      <div className="Container">
+        Algorithms Name: Move Zeros
+        <p className="algo-single">
+          Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of
+          the non-zero elements.
+        </p>
+        <p>Insertion Sort || Selecti</p>
+      </div>
+      <div className="Container">
+        Algorithms Name: TWO SUM
+        <p className="algo-single">https://medium.com/swlh/understanding-leetcode-the-two-sum-problem-6428ed5cb18d</p>
+        <p>Insertion Sort || Selecti</p>
+      </div>
     </>
   );
 };
